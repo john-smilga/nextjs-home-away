@@ -276,6 +276,9 @@ export const fetchPropertyDetails = (id: string) => {
     include: {
       profile: true,
       bookings: {
+        where: {
+          paymentStatus: true,
+        },
         select: {
           checkIn: true,
           checkOut: true,
